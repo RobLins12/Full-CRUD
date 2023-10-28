@@ -1,0 +1,118 @@
+﻿@page
+@model BD2.Pages.Clientes.CreateModel
+@{
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BD2</title>
+    <link rel="stylesheet" href="~/css/Create.css" asp-append-version="true">
+</head>
+<body>
+    <br />
+    <div class="create">
+        <h2>Adicionando um novo Cliente</h2>
+        @if (Model.errorMessage.Length > 0)
+        {
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>@Model.errorMessage</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div> 
+            
+        }
+
+        <br></br>
+        <form method="post">
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Id</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="id" value="@Model.client.id"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">CompanyName</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="CompanyName" value="@Model.client.CompanyName"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">ContactName</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="ContactName" value="@Model.client.ContactName"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">ContactTitle</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="ContactTitle" value="@Model.client.ContactTitle"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Adress</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="Address" value="@Model.client.Address"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">City</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="City" value="@Model.client.City"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Region</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="Region" value="@Model.client.Region"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">PostalCode</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="PostalCode" value="@Model.client.PostalCode"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Country</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="Country" value="@Model.client.Country"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Phone</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="Phone" value="@Model.client.Phone"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Fax</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="Fax" value="@Model.client.Fax"></input>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+               <div class="offset-sm-3 col-sm-3 d-grid">
+                    <button type="submit" class="btn btn-success">Enviar</button>
+               </div>
+                <div class="col-sm-3 d-grid">
+                    <a class="btn btn-outline-danger" href="/Clientes" role="button">Cancel</a>
+                </div>
+            </div>
+
+            @if (Model.successMessage.Length > 0)
+            {
+                <div class="row-mb-3">
+                    <div class="col-sm-9">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>@Model.successMessage</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </form>
+    </div>
+</body>
+
