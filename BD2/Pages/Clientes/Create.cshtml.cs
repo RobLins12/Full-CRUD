@@ -43,7 +43,7 @@ namespace BD2.Pages.Clientes
                 {
                     sqlConnection.Open();
                     String sql = "INSERT INTO Customers" +
-                        "(CustumerID, ContactName, CompanyName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax) VALUES" +
+                        "(CustomerID, ContactName, CompanyName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax) VALUES" +
                         "(@id, @ContactName, @CompanyName, @ContactTitle, @Address, @City, @Region, @PostalCode, @Country, @Phone, @Fax);";
                     
                     using (SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection))
