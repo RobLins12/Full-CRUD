@@ -25,54 +25,54 @@ namespace BD2.Pages.Clientes
                         {
                             while (reader.Read()) 
                             {
-                                ClientInfo ci = new ClientInfo();
+                                ClientInfo clientInfo = new ClientInfo();
                                 if (!reader.IsDBNull(0))
                                 {
-                                    ci.id = reader.GetString(0);
+                                    clientInfo.id = reader.GetString(0);
                                 }
                                 if (!reader.IsDBNull(1))
                                 {
-                                    ci.CompanyName = reader.GetString(1);
+                                    clientInfo.CompanyName = reader.GetString(1);
                                 }
                                 if (!reader.IsDBNull(2))
                                 {
-                                    ci.ContactName = reader.GetString(2);
+                                    clientInfo.ContactName = reader.GetString(2);
                                 }
                                 if (!reader.IsDBNull(3))
                                 {
-                                    ci.ContactTitle = reader.GetString(3);
+                                    clientInfo.ContactTitle = reader.GetString(3);
                                 }
                                 if (!reader.IsDBNull(4))
                                 {
-                                    ci.Address = reader.GetString(4);
+                                    clientInfo.Address = reader.GetString(4);
                                 }
                                 if (!reader.IsDBNull(5))
                                 {
-                                    ci.City = reader.GetString(5);
+                                    clientInfo.City = reader.GetString(5);
                                 }
                                 if (!reader.IsDBNull(6))
                                 {
-                                    ci.Region = reader.GetString(6);
+                                    clientInfo.Region = reader.GetString(6);
                                 }
                                 if (!reader.IsDBNull(7))
                                 {
-                                    ci.PostalCode = reader.GetString(7);
+                                    clientInfo.PostalCode = reader.GetString(7);
                                 }
                                 if (!reader.IsDBNull(8))
                                 {
-                                    ci.Country = reader.GetString(8);
+                                    clientInfo.Country = reader.GetString(8);
                                 }
                                 if (!reader.IsDBNull(9))
                                 {
-                                    ci.Phone = reader.GetString(9);
+                                    clientInfo.Phone = reader.GetString(9);
                                 }
                                 if (!reader.IsDBNull(10))
                                 {
-                                    ci.Fax = reader.GetString(10);
+                                    clientInfo.Fax = reader.GetString(10);
                                 }
 
 
-                                listOfClientes.Add(ci);
+                                listOfClientes.Add(clientInfo);
                                 
                             }
                         }

@@ -1,5 +1,5 @@
 ﻿@page
-@model BD2.Pages.Clientes.CreateModel
+@model BD2.Pages.Clientes.EditModel
 @{
 }
 
@@ -7,22 +7,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - BD2</title>
-    <link rel="stylesheet" href="~/css/Create.css" asp-append-version="true">
 </head>
 <body>
     <br />
-    <div class="create">
-        <h2>Adicionando um novo Cliente</h2>
+    <div class="Edit">
+        <h2>Editando um Cliente</h2>
         @if (Model.errorMessage.Length > 0)
         {
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <strong>@Model.errorMessage</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div> 
-            
-        }
+            </div>
 
-        <br></br>
+        }
+        <br>
         <form method="post">
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Id</label>
@@ -92,9 +90,9 @@
             </div>
 
             <div class="row mb-3">
-               <div class="offset-sm-3 col-sm-3 d-grid">
+                <div class="offset-sm-3 col-sm-3 d-grid">
                     <button type="submit" class="btn btn-success">Enviar</button>
-               </div>
+                </div>
                 <div class="col-sm-3 d-grid">
                     <a class="btn btn-outline-danger" href="/Clientes" role="button">Cancel</a>
                 </div>
@@ -115,4 +113,3 @@
         </form>
     </div>
 </body>
-

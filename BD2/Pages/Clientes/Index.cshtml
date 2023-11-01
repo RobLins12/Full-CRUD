@@ -24,23 +24,23 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var client in Model.listOfClientes)
+        @foreach (var clientInfo in Model.listOfClientes)
         {
             <tr>
-                <td>@client.id</td>
-                <td>@client.CompanyName</td>
-                <td>@client.ContactName</td>
-                <td>@client.ContactTitle</td>
-                <td>@client.Address</td>
-                <td>@client.City</td>
-                <td>@client.Region</td>
-                <td>@client.PostalCode</td>
-                <td>@client.Country</td>
-                <td>@client.Phone</td>
-                <td>@client.Fax</td>
+                <td>@clientInfo.id</td>
+                <td>@clientInfo.CompanyName</td>
+                <td>@clientInfo.ContactName</td>
+                <td>@clientInfo.ContactTitle</td>
+                <td>@clientInfo.Address</td>
+                <td>@clientInfo.City</td>
+                <td>@clientInfo.Region</td>
+                <td>@clientInfo.PostalCode</td>
+                <td>@clientInfo.Country</td>
+                <td>@clientInfo.Phone</td>
+                <td>@clientInfo.Fax</td>
                 <td>
-                    <a class="btn btn-primary" href="/Clients/Edit?id=">Edit</a>
-                    <a class="btn btn-danger" href="/Clients/Delete?id=">Delete</a>
+                    <a class="btn btn-primary" href="/Clientes/Edit?id=@clientInfo.id">Edit</a>
+                    <a class="btn btn-danger" href="/Clientes/Delete?id=@clientInfo.id">Delete</a>
                 </td>
             </tr>    
         
