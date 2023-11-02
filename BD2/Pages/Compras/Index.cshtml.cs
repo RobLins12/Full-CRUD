@@ -1,18 +1,19 @@
 using BD2.Pages.Clientes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using NPOI.SS.Formula.Functions;
 using System.Data.SqlClient;
 
 namespace BD2.Pages.Compras
 {
     public class IndexModel : PageModel
     {
-        public List<> ListOfOrders = new List<T>;
+        public List<T> ListOfOrders = new List<T>();
         public void OnGet()
         {
             try
             {
-                String connectionString = "Data Source=localhost;Initial Catalog=Northwind;Integrated Security=True";
+                String connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=Northwind;Integrated Security=True";
 
                 using (SqlConnection sqlConnection = new SqlConnection(connectionString))
                 {

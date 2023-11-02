@@ -37,7 +37,7 @@ namespace BD2.Pages.Clientes
 
             try
             {
-                String connectionString = "Data Source=localhost;Initial Catalog=Northwind;Integrated Security=True";
+                String connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=Northwind;Integrated Security=True";
 
                 using (SqlConnection sqlConnection = new SqlConnection(connectionString))
                 {
