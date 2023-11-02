@@ -5,7 +5,8 @@
 
 <br>
 <h2>Lista de clientes</h2>
-<a class="btn btn-primary" href="/Clientes/Create">New Client</a>
+<a class="btn btn-primary" href="/Clientes/Create">Novo Cliente</a>
+<br>
 <table class="table">
     <thead>
         <tr>
@@ -20,7 +21,8 @@
             <th>Country</th>
             <th>Phone</th>
             <th>Fax</th>
-            <th>Ação</th>
+            <th>Editar</th>
+            <th>Deletar</th>
         </tr>
     </thead>
     <tbody>
@@ -39,7 +41,9 @@
                 <td>@clientInfo.Phone</td>
                 <td>@clientInfo.Fax</td>
                 <td>
-                    <a class="btn btn-primary" href="/Clientes/Edit?id=@clientInfo.id">Edit</a>
+                    <a class="btn btn-primary" href="/Clientes/Edit?id=@clientInfo.id">Edit</a>              
+                </td>
+                <td>
                     <a class="btn btn-danger" href="/Clientes/Delete?id=@clientInfo.id">Delete</a>
                 </td>
             </tr>    

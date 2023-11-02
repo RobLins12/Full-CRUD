@@ -114,7 +114,7 @@ namespace BD2.Pages.Clientes
                 using (SqlConnection sqlConnection = new SqlConnection(connectionString))
                 {
                     sqlConnection.Open();
-                    String sql = "UPDATE Customers" +
+                    String sql = "UPDATE Customers " +
                         "SET ContactName = @ContactName, " +
                         "CompanyName = @CompanyName, " +
                         "ContactTitle = @ContactTitle, " +
@@ -124,7 +124,7 @@ namespace BD2.Pages.Clientes
                         "PostalCode = @PostalCode, " +
                         "Country = @Country, " +
                         "Phone = @Phone, " +
-                        "Fax = @Fax" +
+                        "Fax = @Fax " +
                         "WHERE CustomerID = @id";
                         
 
