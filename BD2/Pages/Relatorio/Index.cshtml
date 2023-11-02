@@ -3,25 +3,34 @@
 @{
 }
 
+<br>
 <h2>Relatório</h2>
-
-<form method="post">
-    <button type="submit" class="btn btn-primary">Gerar Relatório</button>
-</form>
-
-@{
-    var results = Model.ProcedureRelatorio();
-}
-
-@if (results != null && results.Rows.Count > 0)
-{
-    <h3>Relatório Gerado:</h3>
-    <table class="table">
-        <thead>
+<br>
+<hr></hr>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Categoria</th>
+            <th>QuantidadeVendida</th>
+            <th>TotalDasVendas</th>
+            <th>MaiorComprador</th>
+            <th>PaísComMaisCompras</th>
+            <th>CidadeComMaisCompras</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Relatorio in Model.)
+        {
             <tr>
-                
+                <td>@Relatorio.Categoria</td>
+                <td>@Relatorio.QuantidadeVendida</td>
+                <td>@Relatorio.TotalDasVendas</td>
+                <td>@Relatorio.MaiorComprador</td>
+                <td>@Relatorio.PaísComMaisCompras</td>
+                <td>@Relatorio.CidadeComMaisCompras</td>
             </tr>
-        </thead>
-        
-    </table>
-}
+
+        }
+    </tbody>
+</table>
