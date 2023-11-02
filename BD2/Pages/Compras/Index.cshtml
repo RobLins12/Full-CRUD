@@ -4,8 +4,9 @@
 }
 
 <br>
-<h2>Lista de Compras</h2>
-<a class="btn btn-outline-primary" href="/Compras/Insert">Nova Compra</a>
+<h2>Lista de Compras   ------>   <a class="btn btn-outline-primary" href="/Compras/Insert">Nova Compra</a></h2>
+<br></br>
+<hr></hr>
 <br>
 <table class="table">
     <thead>
@@ -16,20 +17,21 @@
             <th>ProductID</th>
             <th>Quantity</th>
             <th>UnitPrice</th>
+            <th>Discount</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var order in Model.ListOfOrders)
         {
             <tr>
-                <td>@order.OrdersID</td>
+                <td>@order.OrderID</td>
                 <td>@order.CustomerID</td>
                 <td>@order.EmployeeID</td>
                 <td>@order.ProductID</td>
                 <td>@order.Quantity</td>
                 <td>@order.UnitPrice</td>
+                <td>@order.Discount</td>
             </tr>
-
         }
     </tbody>
 </table>

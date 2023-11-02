@@ -2,3 +2,89 @@
 @model BD2.Pages.Compras.InsertModel
 @{
 }
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BD2</title>
+    <link rel="stylesheet" href="~/css/Create.css" asp-append-version="true">
+</head>
+<body>
+    <br />
+    <div class="create">
+        <h2>Adicionando uma nova Compra</h2>
+        @if (Model.errorMessage.Length > 0)
+        {
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>@Model.errorMessage</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+        }
+
+        @if (Model.successMessage.Length > 0)
+        {
+           <div class="row-mb-3">
+               <div class="col-sm-9">
+                   <div class="alert alert-success alert-dismissible fade show" role="alert">
+                       <strong>@Model.successMessage</strong>
+                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                   </div>
+               </div>
+           </div>
+        }
+
+        <br></br>
+        <form method="post">
+            <input type="hidden" name="OrderID" value="@Model.order.OrderID" />
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">CustomerID</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="CustomerID" value="@Model.order.CustomerID"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">EmployeeID</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="EmployeeID" value="@Model.order.EmployeeID"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">ProductID</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="ProductID" value="@Model.order.ProductID"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Quantity</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="Quantity" value="@Model.order.Quantity"></input>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">UnitPrice</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="UnitPrice" value="@Model.order.UnitPrice"></input>
+                </div>
+            </div>  
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Discount</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="Discount" value="@Model.order.Discount"></input>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="offset-sm-3 col-sm-2 d-grid">
+                    <button type="submit" class="btn btn-success">Enviar</button>
+                </div>
+                <div class="offset-sm-3 col-sm-2 d-grid">
+                    <a class="btn btn-outline-success" href="/Compras" role="button">Finalizar</a>
+                </div>
+                <div class="col-sm-2 d-grid">
+                    <a class="btn btn-outline-danger" href="/Compras" role="button">Cancelar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>

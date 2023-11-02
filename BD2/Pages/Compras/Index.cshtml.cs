@@ -19,7 +19,7 @@ namespace BD2.Pages.Compras
                 using (SqlConnection sqlConnection = new SqlConnection(connectionString))
                 {
                     sqlConnection.Open();
-                    String sql = "SELECT o.OrderID, o.CustomerID, o.EmployeeID, od.ProductID, od.Quantity, od.UnitPrice FROM Orders o JOIN [Order Details] od ON od.OrderID = o.OrderID";
+                    String sql = "SELECT o.OrderID, o.CustomerID, o.EmployeeID, od.ProductID, od.Quantity, od.UnitPrice, od.Discount FROM Orders o JOIN [Order Details] od ON od.OrderID = o.OrderID";
                     
                     using (SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection))
                     {
@@ -29,12 +29,13 @@ namespace BD2.Pages.Compras
                             {
                                 Orders order = new Orders();
 
-                                order.OrdersID = reader.GetInt32(0);
+                                order.OrderID = "" + reader.GetInt32(0);
                                 order.CustomerID = reader.GetString(1);
-                                order.EmployeeID = reader.GetInt32(2);
-                                order.ProductID = reader.GetInt32(3);
-                                order.Quantity = reader.GetInt16(4);
-                                order.UnitPrice = reader.GetDecimal(5);
+                                order.EmployeeID = "" + reader.GetInt32(2);
+                                order.ProductID = "" + reader.GetInt32(3);
+                                order.Quantity = "" + reader.GetInt16(4);
+                                order.UnitPrice = "" + reader.GetDecimal(5);
+                                order.Discount = "" + reader.GetSqlSingle(6);
 
                                 ListOfOrders.Add(order);
 
@@ -51,12 +52,13 @@ namespace BD2.Pages.Compras
 
         public class Orders 
         {
-            public int OrdersID;
+            public String OrderID;
             public String CustomerID;
-            public int EmployeeID;
-            public int ProductID;
-            public int Quantity;
-            public decimal UnitPrice;
+            public String EmployeeID;
+            public String ProductID;
+            public String Quantity;
+            public String UnitPrice;
+            public String Discount;
         }
     }
     
