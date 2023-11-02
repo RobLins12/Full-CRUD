@@ -7,7 +7,7 @@ namespace BD2.Pages.Compras
 {
     public class IndexModel : PageModel
     {
-        public List<> ListOfOrders = new List<T>;
+        public List<Orders> ListOfOrders = new List<Orders>();
         public void OnGet()
         {
             try
@@ -17,7 +17,7 @@ namespace BD2.Pages.Compras
                 using (SqlConnection sqlConnection = new SqlConnection(connectionString))
                 {
                     sqlConnection.Open();
-                    String sql = "SELECT * FROM Customers";
+                    String sql = "SELECT * FROM Orders";
                     using (SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection))
                     {
                         using (SqlDataReader reader = sqlCommand.ExecuteReader())
@@ -47,7 +47,12 @@ namespace BD2.Pages.Compras
 
         public class Orders 
         {
-
+            public int OrdersID;
+            public String CustomerID;
+            public int EmployeeID;
+            public int ProductID;
+            public int Quantity;
+            public decimal UnitPrice;
         }
     }
     
