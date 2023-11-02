@@ -2,3 +2,34 @@
 @model BD2.Pages.Compras.IndexModel
 @{
 }
+
+<br>
+<h2>Lista de Compras</h2>
+<a class="btn btn-outline-primary" href="/Compras/Insert">Nova Compra</a>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>CustomerID</th>
+            <th>EmployeeID</th>
+            <th>ProductID</th>
+            <th>Quantity</th>
+            <th>UnitPrice</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model.ListOfOrders)
+        {
+            <tr>
+                <td>@order.OrdersID</td>
+                <td>@order.CustomerID</td>
+                <td>@order.EmployeeID</td>
+                <td>@order.ProductID</td>
+                <td>@order.Quantity</td>
+                <td>@order.UnitPrice</td>
+            </tr>
+
+        }
+    </tbody>
+</table>

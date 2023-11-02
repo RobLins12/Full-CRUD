@@ -1,0 +1,27 @@
+﻿@page
+@model BD2.Pages.Relatorio.IndexModel
+@{
+}
+
+<h2>Relatório</h2>
+
+<form method="post">
+    <button type="submit" class="btn btn-primary">Gerar Relatório</button>
+</form>
+
+@{
+    var results = Model.ProcedureRelatorio();
+}
+
+@if (results != null && results.Rows.Count > 0)
+{
+    <h3>Relatório Gerado:</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                
+            </tr>
+        </thead>
+        
+    </table>
+}
