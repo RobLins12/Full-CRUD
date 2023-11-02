@@ -20,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var Relatorio in Model.)
+        @foreach (var Relatorio in Model.Relatorios)
         {
             <tr>
                 <td>@Relatorio.Categoria</td>
@@ -30,7 +30,6 @@
                 <td>@Relatorio.PaísComMaisCompras</td>
                 <td>@Relatorio.CidadeComMaisCompras</td>
             </tr>
-
         }
     </tbody>
 </table>

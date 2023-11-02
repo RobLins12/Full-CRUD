@@ -1,29 +1,24 @@
-using BD2.Pages.Clientes;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Win32;
-using System.Data;
 using System.Data.SqlClient;
-using System.Xml;
 
 namespace BD2.Pages.Relatorio
 {
     public class IndexModel : PageModel
     {
-        List<Relatorio> Relatorios = new List<Relatorio>();
+       public List<Relatorio> Relatorios = new List<Relatorio>();
 
-        public void ProcedureRelatorio() 
+        public void OnGet() 
         {
 
         try
         {
-            String connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=Northwind;Integrated Security=True";
+            String connectionString = "Data Source=localhost;Initial Catalog=Northwind;Integrated Security=True";
 
                 using (SqlConnection sqlConnection = new SqlConnection(connectionString))
                 {
                     sqlConnection.Open();
 
-                    String sql = "EXECUTE GetCategorySalesReport";
+                    String sql = "EXEC GetCategorySalesReport";
                     using (SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection))
                     {
                         using (SqlDataReader reader = sqlCommand.ExecuteReader())
@@ -31,6 +26,7 @@ namespace BD2.Pages.Relatorio
                             while (reader.Read())
                             {
                                 Relatorio relatorio = new Relatorio();
+
                                 relatorio.Categoria = "" + reader.GetString(0);
                                 relatorio.QuantidadeVendida = "" + reader.GetInt32(1);
                                 relatorio.TotalDasVendas = "" + reader.GetSqlDouble(2);
