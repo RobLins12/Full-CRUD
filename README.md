@@ -15,7 +15,7 @@ Neste projeto, utilizamos uma combinação de tecnologias modernas e eficazes pa
 - Linguagem de Programação: C#
 - Framework: ASP.NET
 - Banco de Dados: Microsoft SQL Server
-- Frontend: HTML, CSS, JavaScript
+- Frontend: CSHTML
 
 ## Funcionalidades Implementadas
 
@@ -35,6 +35,6 @@ Esta funcionalidade permite a inserção de uma compra contendo múltiplos produ
 
 Foi criado um procedimento armazenado para gerar um relatório que exibe a relação das vendas por categoria. O relatório apresenta informações como a categoria, a quantidade de produtos vendidos por categoria, o total arrecadado pela categoria, o maior comprador daquela categoria, o país com mais compras daquela categoria e a cidade com mais compras da categoria. Os resultados são ordenados pelo valor arrecadado, proporcionando uma visão clara e estruturada das informações.
 
-### 5. Gatilho para Limitar Compras Diárias
+### 5. Gatilho para Verificar Estoque Zero na Compra
 
-Foi implementado um gatilho que impede um cliente de realizar mais de quatro compras em um único dia contendo mais de 4 categorias de produtos. Essa medida visa manter um controle adequado das transações e evitar abusos no sistema.
+Foi implementado um gatilho no sistema para verificar se há produtos com estoque zero durante o processo de compra. Este gatilho tem como objetivo garantir que os clientes não possam concluir uma compra que contenha produtos sem disponibilidade em estoque.
